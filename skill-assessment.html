@@ -1,0 +1,226 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>JobAI — Skill Assessment</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="style.css"><link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+rel="stylesheet"></head><body><div class="app"><aside class="sidebar"><div class="brand"><div class="brand-icon">✣</div><div class="brand-text"><b>JobAI</b><small>AI Resume Analyzer & Job Matcher</small></div></div><nav class="nav"><a class="" href="index.html"><span>⌂</span>Dashboard</a><a class="" href="resume-analyzer.html"><span>▤</span>Resume Analyzer</a><a class="" href="job-matcher.html"><span>♧</span>Job Matcher</a><a class="" href="job-search.html"><span>⌕</span>Job Search</a><a class="" href="resume-builder.html"><span>▱</span>Resume Builder</a><a class="" href="career-roadmap.html"><span>◎</span>Career Roadmap</a><a class="" href="applications.html"><span>□</span>Applications</a><a class="" href="interview-practice.html"><span>◉</span>Interview Practice</a><a class="" href="saved-jobs.html"><span>☆</span>Saved Jobs</a><a class="active" href="skill-assessment.html"><span>✓</span>Skill Assessment</a><a class="" href="settings.html"><span>⚙</span>Settings</a></nav><div class="pro"><b>♛ Upgrade to Pro</b><p>Unlock advanced AI insights and analytics.</p><button class="btn primary" onclick="toast('Pro trial activated')">Upgrade Now</button></div></aside><main class="main"><header class="topbar"><div class="topbar-spacer"></div><div class="theme"><span>☼</span><button id="themeBtn"><i></i></button><span>☾</span><button class="link" id="notifyBtn">♧</button><button class="profile" id="profileBtn"><span class="avatar" data-user-initials>U</span><span class="profile-info"><b data-user-name>User</b><small>View Profile</small></span></button></div></header><div class="page-head"><div><h1>Skill Assessment</h1><p>Test your JavaScript fundamentals.</p></div></div><div class="skill-assessment skill-assessment-page"><div id="topicSection" class="card topic-section"><div class="assessment-intro"><span class="purple">Skill Assessment</span><h2>Choose a skill to test</h2><p class="muted">Select a topic and test your knowledge with carefully designed questions.</p></div><div class="topic-grid"><button type="button" class="topic-card" data-topic="javascript"><div class="topic-top"><span class="topic-icon js-icon">JS</span><span class="topic-arrow">→</span></div><div class="topic-content"><strong>JavaScript</strong><small>Fundamentals & Web Development</small></div><div class="topic-meta"><span>📝 20 Questions</span><span class="difficulty beginner">Beginner</span></div><span class="topic-start">Start Assessment →</span></button><button type="button" class="topic-card" data-topic="java"><div class="topic-top"><span class="topic-icon java-icon">JAVA</span><span class="topic-arrow">→</span></div><div class="topic-content"><strong>Java</strong><small>Core Java & Object-Oriented Programming</small></div><div class="topic-meta"><span>📝 20 Questions</span><span class="difficulty intermediate">Intermediate</span></div><span class="topic-start">Start Assessment →</span></button><button type="button" class="topic-card" data-topic="python"><div class="topic-top"><span class="topic-icon python-icon">PY</span><span class="topic-arrow">→</span></div><div class="topic-content"><strong>Python</strong><small>Programming Fundamentals</small></div><div class="topic-meta"><span>📝 20 Questions</span><span class="difficulty beginner">Beginner</span></div><span class="topic-start">Start Assessment →</span></button><button type="button" class="topic-card" data-topic="sql"><div class="topic-top"><span class="topic-icon sql-icon">SQL</span><span class="topic-arrow">→</span></div><div class="topic-content"><strong>SQL</strong><small>Queries & Database Management</small></div><div class="topic-meta"><span>📝 20 Questions</span><span class="difficulty intermediate">Intermediate</span></div><span class="topic-start">Start Assessment →</span></button><button type="button" class="topic-card" data-topic="dsa"><div class="topic-top"><span class="topic-icon dsa-icon">DSA</span><span class="topic-arrow">→</span></div><div class="topic-content"><strong>DSA</strong><small>Data Structures & Algorithms</small></div><div class="topic-meta"><span>📝 25 Questions</span><span class="difficulty advanced">Advanced</span></div><span class="topic-start">Start Assessment →</span></button><button type="button" class="topic-card" data-topic="htmlcss"><div class="topic-top"><span class="topic-icon web-icon">WEB</span><span class="topic-arrow">→</span></div><div class="topic-content"><strong>HTML & CSS</strong><small>Web Development Basics</small></div><div class="topic-meta"><span>📝 20 Questions</span><span class="difficulty beginner">Beginner</span></div><span class="topic-start">Start Assessment →</span></button></div></div><div id="quizSection" class="quiz-section" style="display:none;"><div class="quiz-header"><div><span class="purple"><span id="selectedTopic">JavaScript</span> Assessment</span><h2>Question <b id="sqn">1</b>/10</h2></div><button type="button" class="btn outline" id="backToTopics">← Change Topic</button></div><div class="grid two quiz-grid"><div class="card question"><h2 id="squestion"></h2><div id="sanswers"></div><button type="button" class="btn primary" id="snext">Submit Answer</button></div><div class="card"><h3>Assessment Progress</h3><p class="muted">Keep going and test your knowledge.</p><div class="progress"><i id="sbar" style="width:0%"></i></div><h2 id="sscore" class="assessment-score">0%</h2><p class="muted">Current Score</p></div></div></div></div></main></div><div class="toast" id="toast"></div><div class="modal-bg" id="modalBg"><div class="modal" id="modal"></div></div><script src="app.js"></script><script>
+const skillQuestions={
+javascript:[
+["Which keyword declares a block-scoped variable?",["var","let","function","define"],1],
+["What does DOM stand for?",["Data Object Model","Document Object Model","Digital Object Mode","Document Order Map"],1],
+["Which method converts JSON text into an object?",["JSON.parse()","JSON.stringify()","parseJSON()","Object.parse()"],0],
+["Which event fires when a button is clicked?",["hover","submit","click","change"],2],
+["Which method transforms every element of an array?",["map()","push()","pop()","join()"],0],
+["Which symbol is used for strict equality?",["=","==","===","!=="],2],
+["Which keyword creates a constant?",["constant","fixed","const","let"],2],
+["Which method adds an element to the end of an array?",["shift()","push()","unshift()","add()"],1],
+["Which syntax creates an arrow function?",["() => {}","-> {}","function => {}","<= {}"],0],
+["Which method removes the last element from an array?",["shift()","remove()","pop()","delete()"],2]
+],
+java:[
+["Which keyword is used to create a class?",["class","Class","object","new"],0],
+["Which keyword creates an object?",["create","object","new","this"],2],
+["Which concept allows a class to inherit another class?",["Polymorphism","Inheritance","Encapsulation","Abstraction"],1],
+["Which keyword refers to the current object?",["self","current","this","super"],2],
+["Which keyword is used for inheritance in Java?",["inherits","extends","implements","inherit"],1],
+["Which method is the entry point of a Java program?",["start()","run()","main()","execute()"],2],
+["Which keyword prevents a class from being inherited?",["static","private","final","const"],2],
+["Which concept hides implementation details?",["Abstraction","Inheritance","Compilation","Casting"],0],
+["Which collection does not allow duplicate elements?",["List","Set","ArrayList","Vector"],1],
+["Which keyword is used to implement an interface?",["extends","inherits","implements","interface"],2]
+],
+python:[
+["Which symbol is used to create a comment in Python?",["//","#","/*","--"],1],
+["Which keyword defines a function?",["function","define","def","fun"],2],
+["Which data type stores key-value pairs?",["List","Tuple","Dictionary","Set"],2],
+["Which function is used to display output?",["display()","console()","print()","write()"],2],
+["Which keyword is used for a loop over a sequence?",["loop","for","repeat","iterate"],1],
+["Which data type is immutable?",["List","Dictionary","Tuple","Set"],2],
+["Which keyword is used to create a class?",["class","Class","object","define"],0],
+["Which operator is used for exponentiation?",["^","**","//","^^"],1],
+["Which function returns the length of an object?",["length()","size()","len()","count()"],2],
+["Which keyword handles exceptions?",["catch","error","try","exception"],2]
+],
+sql:[
+["Which command is used to retrieve data?",["GET","SELECT","FETCH","RETRIEVE"],1],
+["Which command adds new records?",["ADD","INSERT","CREATE","APPEND"],1],
+["Which command modifies existing data?",["CHANGE","MODIFY","UPDATE","ALTER"],2],
+["Which command removes records?",["REMOVE","DELETE","DROP","CLEAR"],1],
+["Which clause filters rows?",["FILTER","WHERE","HAVING","SELECT"],1],
+["Which clause sorts query results?",["SORT BY","ORDER BY","GROUP BY","ARRANGE"],1],
+["Which command creates a table?",["CREATE TABLE","MAKE TABLE","NEW TABLE","BUILD TABLE"],0],
+["Which function counts rows?",["TOTAL()","COUNT()","NUMBER()","ROWS()"],1],
+["Which keyword removes duplicate results?",["UNIQUE","DISTINCT","DIFFERENT","ONLY"],1],
+["Which clause groups rows with the same values?",["GROUP BY","ORDER BY","WHERE","JOIN"],0]
+],
+dsa:[
+["Which data structure follows LIFO?",["Queue","Stack","Array","Tree"],1],
+["Which data structure follows FIFO?",["Stack","Queue","Tree","Graph"],1],
+["Which algorithm is commonly used to find the shortest path?",["Dijkstra's Algorithm","Binary Search","Bubble Sort","DFS"],0],
+["What is the time complexity of binary search?",["O(n)","O(log n)","O(n²)","O(1)"],1],
+["Which structure represents hierarchical data?",["Array","Stack","Tree","Queue"],2],
+["Which traversal uses a queue?",["DFS","BFS","Binary Search","Backtracking"],1],
+["Which sorting algorithm repeatedly swaps adjacent elements?",["Merge Sort","Quick Sort","Bubble Sort","Heap Sort"],2],
+["Which data structure uses nodes and pointers?",["Array","Linked List","String","Matrix"],1],
+["What is the worst-case complexity of linear search?",["O(1)","O(log n)","O(n)","O(n²)"],2],
+["Which data structure is commonly used for recursion?",["Queue","Stack","Graph","Heap"],1]
+],
+htmlcss:[
+["Which tag creates a hyperlink?",["<link>","<a>","<href>","<url>"],1],
+["Which tag creates the largest heading?",["<h6>","<heading>","<h1>","<head>"],2],
+["Which property changes text color?",["font-color","text-color","color","foreground"],2],
+["Which CSS property changes the background color?",["background","background-color","bg-color","color"],1],
+["Which CSS property controls the size of text?",["text-size","font-size","size","font"],1],
+["Which HTML tag is used to create a paragraph?",["<paragraph>","<p>","<para>","<text>"],1],
+["Which CSS layout system is useful for one-dimensional layouts?",["Grid","Flexbox","Float","Table"],1],
+["Which CSS property adds space inside an element?",["margin","padding","spacing","border"],1],
+["Which HTML attribute provides alternative text for images?",["title","src","alt","description"],2],
+["Which CSS property makes an element a flex container?",["position: flex","display: flex","flex: true","layout: flex"],1]
+]
+};
+
+let currentTopic="";
+let currentQuestion=0;
+let currentScore=0;
+let selectedAnswer=-1;
+
+function startAssessment(topic){
+currentTopic=topic;
+currentQuestion=0;
+currentScore=0;
+selectedAnswer=-1;
+qs("#topicSection").style.display="none";
+qs("#quizSection").style.display="block";
+
+const topicNames={
+javascript:"JavaScript",
+java:"Java",
+python:"Python",
+sql:"SQL",
+dsa:"DSA",
+htmlcss:"HTML & CSS"
+};
+
+qs("#selectedTopic").textContent=topicNames[topic];
+loadSkillQuestion();
+}
+
+function loadSkillQuestion(){
+
+const questions=skillQuestions[currentTopic];
+const q=questions[currentQuestion];
+
+qs("#sqn").textContent=currentQuestion+1;
+qs("#squestion").textContent=q[0];
+
+qs("#sanswers").innerHTML=q[1].map(
+(answer,index)=>`
+<button class="answer" data-i="${index}">
+${answer}
+</button>
+`).join("");
+
+selectedAnswer=-1;
+
+qsa("#sanswers .answer").forEach(button=>{
+
+button.onclick=()=>{
+
+selectedAnswer=Number(button.dataset.i);
+
+qsa("#sanswers .answer").forEach(answer=>{
+answer.classList.remove("selected");
+});
+
+button.classList.add("selected");
+
+};
+
+});
+
+qs("#sbar").style.width=((currentQuestion)/questions.length*100)+"%";
+
+qs("#sscore").textContent=currentScore*10+"%";
+
+qs("#snext").textContent=
+currentQuestion===questions.length-1
+?"Finish Assessment"
+:"Submit Answer";
+
+}
+
+qsa(".topic-card").forEach(button=>{
+
+button.onclick=()=>{
+
+const topic=button.dataset.topic;
+
+startAssessment(topic);
+
+};
+
+});
+
+qs("#backToTopics").onclick=()=>{
+
+qs("#quizSection").style.display="none";
+
+qs("#topicSection").style.display="block";
+
+};
+
+qs("#snext").onclick=()=>{
+
+if(selectedAnswer<0){
+
+return toast("Choose an answer");
+
+}
+
+const questions=skillQuestions[currentTopic];
+
+const correctAnswer=questions[currentQuestion][2];
+
+if(selectedAnswer===correctAnswer){
+
+currentScore++;
+
+}
+
+if(currentQuestion===questions.length-1){
+
+qs("#sbar").style.width="100%";
+
+const percentage=Math.round(
+currentScore/questions.length*100
+);
+
+qs("#sscore").textContent=percentage+"%";
+
+modal(
+"Assessment Complete",
+`
+<p>
+<b>${currentScore}</b>
+out of
+<b>${questions.length}</b>
+answers correct.
+</p>
+
+<p>
+Final Score:
+<b>${percentage}%</b>
+</p>
+`
+);
+
+return;
+
+}
+
+currentQuestion++;
+
+selectedAnswer=-1;
+
+loadSkillQuestion();
+
+};
+
+</script></body></html>

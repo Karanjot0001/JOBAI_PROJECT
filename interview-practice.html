@@ -1,0 +1,1542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>JobAI — Interview Practice</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar">
+
+        <!-- Brand -->
+        <div class="brand">
+
+            <div class="brand-icon">
+                ✣
+            </div>
+
+            <div class="brand-text">
+                <b>JobAI</b>
+                <small>AI Resume Analyzer & Job Matcher</small>
+            </div>
+
+        </div>
+
+
+        <!-- Navigation -->
+        <nav class="nav">
+
+            <a href="index.html">
+                <span>⌂</span>
+                Dashboard
+            </a>
+
+            <a href="resume-analyzer.html">
+                <span>▤</span>
+                Resume Analyzer
+            </a>
+
+            <a href="job-matcher.html">
+                <span>♧</span>
+                Job Matcher
+            </a>
+
+            <a href="job-search.html">
+                <span>⌕</span>
+                Job Search
+            </a>
+
+            <a href="resume-builder.html">
+                <span>▱</span>
+                Resume Builder
+            </a>
+
+            <a href="career-roadmap.html">
+                <span>◎</span>
+                Career Roadmap
+            </a>
+
+            <a href="applications.html">
+                <span>□</span>
+                Applications
+            </a>
+
+            <!-- Active Page -->
+            <a
+                class="active"
+                href="interview-practice.html"
+            >
+                <span>◉</span>
+                Interview Practice
+            </a>
+
+            <a href="saved-jobs.html">
+                <span>☆</span>
+                Saved Jobs
+            </a>
+
+            <a href="skill-assessment.html">
+                <span>✓</span>
+                Skill Assessment
+            </a>
+
+            <a href="settings.html">
+                <span>⚙</span>
+                Settings
+            </a>
+
+        </nav>
+
+
+        <!-- ================= PRO SECTION ================= -->
+        <div class="pro">
+
+            <b>♛ Upgrade to Pro</b>
+
+            <p>
+                Unlock advanced AI insights and analytics.
+            </p>
+
+            <button
+                class="btn primary"
+                type="button"
+                onclick="toast('Pro trial activated')"
+            >
+                Upgrade Now
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="main">
+
+        <!-- Top Bar -->
+        <header class="topbar">
+
+            <div class="topbar-spacer"></div>
+
+            <div class="theme">
+
+                <span>☼</span>
+
+                <button
+                    id="themeBtn"
+                    type="button"
+                    aria-label="Toggle theme"
+                >
+                    <i></i>
+                </button>
+
+                <span>☾</span>
+
+                <button
+                    class="link"
+                    id="notifyBtn"
+                    type="button"
+                    aria-label="Notifications"
+                >
+                    ♧
+                </button>
+
+                <button
+                    class="profile"
+                    id="profileBtn"
+                    type="button"
+                >
+
+                    <span
+                        class="avatar"
+                        data-user-initials
+                    >
+                        U
+                    </span>
+
+                    <span class="profile-info">
+                        <b data-user-name>User</b>
+                        <small>View Profile</small>
+                    </span>
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= PAGE HEADER ================= -->
+        <div class="page-head">
+
+            <div class="page-title">
+
+                <h1>
+                    Interview Practice
+                </h1>
+
+                <p>
+                    Practice technical questions and track your score.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             INTERVIEW PRACTICE AREA
+        ====================================================== -->
+
+        <!-- ================= TOPIC SELECTION ================= -->
+        <section
+            id="topicSection"
+            class="interview-section"
+        >
+
+            <div class="interview-intro">
+
+                <h2>
+                    Choose Your Interview Topic
+                </h2>
+
+                <p class="muted">
+                    Select a topic and practice questions designed
+                    for technical interviews.
+                </p>
+
+            </div>
+
+
+            <!-- Topic Cards -->
+            <div class="topic-grid">
+
+                <!-- Java -->
+                <div
+                    class="topic-card"
+                    data-topic="Java"
+                    role="button"
+                    tabindex="0"
+                >
+
+                    <div class="topic-icon">
+                        ☕
+                    </div>
+
+                    <h3>
+                        Java
+                    </h3>
+
+                    <p>
+                        Practice Core Java, collections,
+                        exceptions and fundamentals.
+                    </p>
+
+                    <span>
+                        5 Questions
+                    </span>
+
+                </div>
+
+
+                <!-- DSA -->
+                <div
+                    class="topic-card"
+                    data-topic="DSA"
+                    role="button"
+                    tabindex="0"
+                >
+
+                    <div class="topic-icon">
+                        🧩
+                    </div>
+
+                    <h3>
+                        DSA
+                    </h3>
+
+                    <p>
+                        Practice data structures, algorithms,
+                        searching and sorting.
+                    </p>
+
+                    <span>
+                        5 Questions
+                    </span>
+
+                </div>
+
+
+                <!-- DBMS -->
+                <div
+                    class="topic-card"
+                    data-topic="DBMS"
+                    role="button"
+                    tabindex="0"
+                >
+
+                    <div class="topic-icon">
+                        🗄
+                    </div>
+
+                    <h3>
+                        DBMS
+                    </h3>
+
+                    <p>
+                        Practice databases, keys, normalization
+                        and transactions.
+                    </p>
+
+                    <span>
+                        5 Questions
+                    </span>
+
+                </div>
+
+
+                <!-- OOP -->
+                <div
+                    class="topic-card"
+                    data-topic="OOP"
+                    role="button"
+                    tabindex="0"
+                >
+
+                    <div class="topic-icon">
+                        🔷
+                    </div>
+
+                    <h3>
+                        OOP
+                    </h3>
+
+                    <p>
+                        Practice inheritance, polymorphism,
+                        abstraction and encapsulation.
+                    </p>
+
+                    <span>
+                        5 Questions
+                    </span>
+
+                </div>
+
+
+                <!-- SQL -->
+                <div
+                    class="topic-card"
+                    data-topic="SQL"
+                    role="button"
+                    tabindex="0"
+                >
+
+                    <div class="topic-icon">
+                        🛢
+                    </div>
+
+                    <h3>
+                        SQL
+                    </h3>
+
+                    <p>
+                        Practice SQL queries, joins,
+                        filtering and aggregation.
+                    </p>
+
+                    <span>
+                        5 Questions
+                    </span>
+
+                </div>
+
+
+                <!-- Operating Systems -->
+                <div
+                    class="topic-card"
+                    data-topic="OS"
+                    role="button"
+                    tabindex="0"
+                >
+
+                    <div class="topic-icon">
+                        💻
+                    </div>
+
+                    <h3>
+                        Operating Systems
+                    </h3>
+
+                    <p>
+                        Practice processes, memory,
+                        scheduling and deadlocks.
+                    </p>
+
+                    <span>
+                        5 Questions
+                    </span>
+
+                </div>
+
+
+                <!-- Computer Networks -->
+                <div
+                    class="topic-card"
+                    data-topic="Networks"
+                    role="button"
+                    tabindex="0"
+                >
+
+                    <div class="topic-icon">
+                        🌐
+                    </div>
+
+                    <h3>
+                        Computer Networks
+                    </h3>
+
+                    <p>
+                        Practice protocols, networking
+                        and the OSI model.
+                    </p>
+
+                    <span>
+                        5 Questions
+                    </span>
+
+                </div>
+
+
+                <!-- JavaScript -->
+                <div
+                    class="topic-card"
+                    data-topic="JavaScript"
+                    role="button"
+                    tabindex="0"
+                >
+
+                    <div class="topic-icon">
+                        JS
+                    </div>
+
+                    <h3>
+                        JavaScript
+                    </h3>
+
+                    <p>
+                        Practice JavaScript fundamentals,
+                        DOM, arrays and modern syntax.
+                    </p>
+
+                    <span>
+                        5 Questions
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= QUESTION SECTION ================= -->
+        <section
+            id="practiceSection"
+            class="practice-section"
+            hidden
+        >
+
+            <div class="practice-top">
+
+                <button
+                    class="btn outline"
+                    id="backToTopics"
+                    type="button"
+                >
+                    ← Back to Topics
+                </button>
+
+
+                <div class="practice-heading">
+
+                    <h2 id="selectedTopicTitle">
+                        Interview Practice
+                    </h2>
+
+                    <p
+                        class="muted"
+                        id="selectedTopicDescription"
+                    ></p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Question + Coach -->
+            <div class="grid two practice-grid">
+
+                <!-- Question Card -->
+                <div class="card question">
+
+                    <span class="purple">
+
+                        Question
+
+                        <b id="qn">
+                            1
+                        </b>
+
+                        /
+
+                        <b id="totalQuestions">
+                            5
+                        </b>
+
+                    </span>
+
+
+                    <h2 id="question"></h2>
+
+
+                    <div
+                        id="answers"
+                        class="answers"
+                    ></div>
+
+
+                    <button
+                        class="btn primary"
+                        id="next"
+                        type="button"
+                    >
+                        Next Question
+                    </button>
+
+                </div>
+
+
+                <!-- AI Interview Coach -->
+                <div class="card interview-coach">
+
+                    <h3>
+                        AI Interview Coach
+                    </h3>
+
+                    <p class="muted">
+                        Answer each question and receive your score.
+                    </p>
+
+
+                    <!-- Progress -->
+                    <div class="progress">
+
+                        <i
+                            id="ibar"
+                            style="width: 20%;"
+                        ></i>
+
+                    </div>
+
+
+                    <p
+                        id="iscore"
+                        class="muted"
+                    >
+                        Score: 0/0
+                    </p>
+
+
+                    <div class="interview-stats">
+
+                        <div>
+
+                            <span>
+                                Topic
+                            </span>
+
+                            <b id="coachTopic">
+                                -
+                            </b>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Questions
+                            </span>
+
+                            <b id="coachQuestions">
+                                -
+                            </b>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Current Score
+                            </span>
+
+                            <b id="coachScore">
+                                0
+                            </b>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- ================= TOAST ================= -->
+<div
+    class="toast"
+    id="toast"
+    role="status"
+    aria-live="polite"
+></div>
+
+
+<!-- ================= MODAL ================= -->
+<div
+    class="modal-bg"
+    id="modalBg"
+>
+
+    <div
+        class="modal"
+        id="modal"
+        role="dialog"
+        aria-modal="true"
+    ></div>
+
+</div>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+<script src="app.js"></script>
+
+
+<script>
+
+/* =========================================================
+   INTERVIEW PRACTICE SYSTEM
+========================================================= */
+
+
+/* ================= INTERVIEW QUESTIONS ================= */
+
+const interviewTopics = {
+
+    Java: {
+
+        description:
+            "Practice Core Java, OOP, collections, exceptions and Java fundamentals.",
+
+        questions: [
+
+            [
+                "Which keyword is used to inherit a class in Java?",
+                ["implements", "extends", "inherits", "super"],
+                1
+            ],
+
+            [
+                "Which of these is NOT a primitive data type in Java?",
+                ["int", "float", "String", "char"],
+                2
+            ],
+
+            [
+                "Which keyword is used to create an object in Java?",
+                ["create", "new", "object", "class"],
+                1
+            ],
+
+            [
+                "Which method is the entry point of a Java program?",
+                [
+                    "start()",
+                    "main()",
+                    "run()",
+                    "execute()"
+                ],
+                1
+            ],
+
+            [
+                "Which collection does NOT allow duplicate elements?",
+                [
+                    "ArrayList",
+                    "LinkedList",
+                    "HashSet",
+                    "Vector"
+                ],
+                2
+            ]
+
+        ]
+    },
+
+
+    DSA: {
+
+        description:
+            "Practice arrays, linked lists, stacks, queues, trees and algorithms.",
+
+        questions: [
+
+            [
+                "Which data structure follows LIFO?",
+                [
+                    "Queue",
+                    "Stack",
+                    "Array",
+                    "Linked List"
+                ],
+                1
+            ],
+
+            [
+                "Which data structure follows FIFO?",
+                [
+                    "Stack",
+                    "Tree",
+                    "Queue",
+                    "Graph"
+                ],
+                2
+            ],
+
+            [
+                "What is the time complexity of binary search?",
+                [
+                    "O(n)",
+                    "O(log n)",
+                    "O(n²)",
+                    "O(1)"
+                ],
+                1
+            ],
+
+            [
+                "Which sorting algorithm has an average time complexity of O(n log n)?",
+                [
+                    "Bubble Sort",
+                    "Selection Sort",
+                    "Merge Sort",
+                    "Linear Search"
+                ],
+                2
+            ],
+
+            [
+                "Which data structure is commonly used for BFS?",
+                [
+                    "Stack",
+                    "Queue",
+                    "Heap",
+                    "Array"
+                ],
+                1
+            ]
+
+        ]
+    },
+
+
+    DBMS: {
+
+        description:
+            "Practice databases, keys, normalization, transactions and DBMS concepts.",
+
+        questions: [
+
+            [
+                "What does DBMS stand for?",
+                [
+                    "Database Management System",
+                    "Data Backup Management System",
+                    "Database Monitoring System",
+                    "Data Management Software"
+                ],
+                0
+            ],
+
+            [
+                "Which key uniquely identifies each record in a table?",
+                [
+                    "Foreign Key",
+                    "Primary Key",
+                    "Candidate Key",
+                    "Composite Key"
+                ],
+                1
+            ],
+
+            [
+                "Which normal form removes repeating groups?",
+                [
+                    "1NF",
+                    "2NF",
+                    "3NF",
+                    "BCNF"
+                ],
+                0
+            ],
+
+            [
+                "Which command is used to retrieve data from a database?",
+                [
+                    "INSERT",
+                    "UPDATE",
+                    "SELECT",
+                    "DELETE"
+                ],
+                2
+            ],
+
+            [
+                "What does ACID stand for in database transactions?",
+                [
+                    "Atomicity, Consistency, Isolation, Durability",
+                    "Accuracy, Control, Isolation, Data",
+                    "Atomicity, Control, Integrity, Data",
+                    "Access, Consistency, Isolation, Data"
+                ],
+                0
+            ]
+
+        ]
+    },
+
+
+    OOP: {
+
+        description:
+            "Practice inheritance, polymorphism, abstraction and encapsulation.",
+
+        questions: [
+
+            [
+                "Which OOP concept allows a class to acquire properties of another class?",
+                [
+                    "Encapsulation",
+                    "Inheritance",
+                    "Abstraction",
+                    "Polymorphism"
+                ],
+                1
+            ],
+
+            [
+                "Which concept hides internal implementation details?",
+                [
+                    "Inheritance",
+                    "Polymorphism",
+                    "Abstraction",
+                    "Compilation"
+                ],
+                2
+            ],
+
+            [
+                "Which concept means one interface can have multiple implementations?",
+                [
+                    "Inheritance",
+                    "Polymorphism",
+                    "Encapsulation",
+                    "Abstraction"
+                ],
+                1
+            ],
+
+            [
+                "Which access modifier provides the highest level of restriction?",
+                [
+                    "public",
+                    "protected",
+                    "private",
+                    "default"
+                ],
+                2
+            ],
+
+            [
+                "Which OOP concept bundles data and methods together?",
+                [
+                    "Encapsulation",
+                    "Inheritance",
+                    "Polymorphism",
+                    "Abstraction"
+                ],
+                0
+            ]
+
+        ]
+    },
+
+
+    SQL: {
+
+        description:
+            "Practice SQL queries, joins, filtering, grouping and aggregation.",
+
+        questions: [
+
+            [
+                "Which SQL command is used to retrieve records?",
+                [
+                    "GET",
+                    "SELECT",
+                    "FETCH",
+                    "READ"
+                ],
+                1
+            ],
+
+            [
+                "Which clause is used to filter rows?",
+                [
+                    "GROUP BY",
+                    "ORDER BY",
+                    "WHERE",
+                    "HAVING"
+                ],
+                2
+            ],
+
+            [
+                "Which clause is used to sort query results?",
+                [
+                    "SORT BY",
+                    "ORDER BY",
+                    "GROUP BY",
+                    "ARRANGE BY"
+                ],
+                1
+            ],
+
+            [
+                "Which SQL function returns the number of rows?",
+                [
+                    "SUM()",
+                    "COUNT()",
+                    "TOTAL()",
+                    "NUMBER()"
+                ],
+                1
+            ],
+
+            [
+                "Which JOIN returns matching records from both tables?",
+                [
+                    "LEFT JOIN",
+                    "RIGHT JOIN",
+                    "FULL JOIN",
+                    "INNER JOIN"
+                ],
+                3
+            ]
+
+        ]
+    },
+
+
+    OS: {
+
+        description:
+            "Practice processes, memory management, scheduling and operating system concepts.",
+
+        questions: [
+
+            [
+                "What is the main function of an operating system?",
+                [
+                    "Manage computer resources",
+                    "Only run games",
+                    "Create websites",
+                    "Design databases"
+                ],
+                0
+            ],
+
+            [
+                "Which scheduling algorithm executes processes in arrival order?",
+                [
+                    "Round Robin",
+                    "FCFS",
+                    "SJF",
+                    "Priority"
+                ],
+                1
+            ],
+
+            [
+                "Which of these is a type of memory management technique?",
+                [
+                    "Paging",
+                    "Sorting",
+                    "Hashing",
+                    "Parsing"
+                ],
+                0
+            ],
+
+            [
+                "A process that is currently executing is in which state?",
+                [
+                    "Waiting",
+                    "Ready",
+                    "Running",
+                    "Terminated"
+                ],
+                2
+            ],
+
+            [
+                "Which condition is associated with deadlock?",
+                [
+                    "Mutual exclusion",
+                    "Compilation",
+                    "Inheritance",
+                    "Encapsulation"
+                ],
+                0
+            ]
+
+        ]
+    },
+
+
+    Networks: {
+
+        description:
+            "Practice computer networks, protocols, OSI model and networking fundamentals.",
+
+        questions: [
+
+            [
+                "How many layers are present in the OSI model?",
+                [
+                    "5",
+                    "6",
+                    "7",
+                    "8"
+                ],
+                2
+            ],
+
+            [
+                "Which protocol is used to transfer web pages securely?",
+                [
+                    "HTTP",
+                    "HTTPS",
+                    "FTP",
+                    "SMTP"
+                ],
+                1
+            ],
+
+            [
+                "Which device forwards packets between different networks?",
+                [
+                    "Switch",
+                    "Hub",
+                    "Router",
+                    "Repeater"
+                ],
+                2
+            ],
+
+            [
+                "Which protocol is used to send email?",
+                [
+                    "SMTP",
+                    "HTTP",
+                    "FTP",
+                    "ARP"
+                ],
+                0
+            ],
+
+            [
+                "Which layer of the OSI model is responsible for routing?",
+                [
+                    "Physical",
+                    "Data Link",
+                    "Network",
+                    "Transport"
+                ],
+                2
+            ]
+
+        ]
+    },
+
+
+    JavaScript: {
+
+        description:
+            "Practice JavaScript fundamentals, arrays, functions, DOM and modern syntax.",
+
+        questions: [
+
+            [
+                "Which keyword declares a block-scoped variable?",
+                [
+                    "var",
+                    "let",
+                    "function",
+                    "define"
+                ],
+                1
+            ],
+
+            [
+                "What does DOM stand for?",
+                [
+                    "Data Object Model",
+                    "Document Object Model",
+                    "Digital Object Mode",
+                    "Document Order Map"
+                ],
+                1
+            ],
+
+            [
+                "Which method converts JSON text into a JavaScript object?",
+                [
+                    "JSON.parse()",
+                    "JSON.stringify()",
+                    "parseJSON()",
+                    "Object.parse()"
+                ],
+                0
+            ],
+
+            [
+                "Which event fires when a button is clicked?",
+                [
+                    "hover",
+                    "submit",
+                    "click",
+                    "change"
+                ],
+                2
+            ],
+
+            [
+                "Which method creates a new array by transforming every element?",
+                [
+                    "map()",
+                    "push()",
+                    "pop()",
+                    "join()"
+                ],
+                0
+            ]
+
+        ]
+    }
+
+};
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+let currentTopic = "";
+let currentQuestion = 0;
+let currentScore = 0;
+let selectedAnswer = -1;
+
+
+/* =========================================================
+   TOPIC SELECTION
+========================================================= */
+
+qsa(".topic-card").forEach(card => {
+
+    card.addEventListener("click", () => {
+
+        const topic = card.dataset.topic;
+
+        startInterview(topic);
+
+    });
+
+});
+
+
+/* =========================================================
+   START INTERVIEW
+========================================================= */
+
+function startInterview(topic) {
+
+    currentTopic = topic;
+    currentQuestion = 0;
+    currentScore = 0;
+    selectedAnswer = -1;
+
+    const topicData = interviewTopics[topic];
+
+    if (!topicData) {
+        return;
+    }
+
+
+    /* Hide topic selection */
+    qs("#topicSection").hidden = true;
+
+
+    /* Show practice section */
+    qs("#practiceSection").hidden = false;
+
+
+    /* Update topic information */
+
+    qs("#selectedTopicTitle").textContent =
+        topic + " Interview Practice";
+
+    qs("#selectedTopicDescription").textContent =
+        topicData.description;
+
+
+    qs("#coachTopic").textContent =
+        topic;
+
+    qs("#coachQuestions").textContent =
+        topicData.questions.length;
+
+    qs("#coachScore").textContent =
+        "0";
+
+
+    qs("#totalQuestions").textContent =
+        topicData.questions.length;
+
+
+    qs("#iscore").textContent =
+        "Score: 0/0";
+
+
+    /* Load first question */
+
+    loadQuestion();
+
+}
+
+
+/* =========================================================
+   LOAD QUESTION
+========================================================= */
+
+function loadQuestion() {
+
+    const topicData =
+        interviewTopics[currentTopic];
+
+    const question =
+        topicData.questions[currentQuestion];
+
+
+    /* Question number */
+
+    qs("#qn").textContent =
+        currentQuestion + 1;
+
+
+    /* Question text */
+
+    qs("#question").textContent =
+        question[0];
+
+
+    /* Reset selected answer */
+
+    selectedAnswer = -1;
+
+
+    /* Create answer buttons */
+
+    qs("#answers").innerHTML = question[1]
+        .map(
+            (answer, index) => `
+                <button
+                    class="answer"
+                    data-i="${index}"
+                    type="button"
+                >
+                    ${answer}
+                </button>
+            `
+        )
+        .join("");
+
+
+    /* Answer selection */
+
+    qsa(".answer").forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            selectedAnswer =
+                Number(button.dataset.i);
+
+
+            qsa(".answer").forEach(answer => {
+
+                answer.classList.remove("selected");
+
+            });
+
+
+            button.classList.add("selected");
+
+        });
+
+    });
+
+
+    /* Progress */
+
+    const total =
+        topicData.questions.length;
+
+    const progress =
+        ((currentQuestion + 1) / total) * 100;
+
+
+    qs("#ibar").style.width =
+        progress + "%";
+
+
+    /* Button text */
+
+    if (currentQuestion === total - 1) {
+
+        qs("#next").textContent =
+            "Finish Interview";
+
+    }
+
+    else {
+
+        qs("#next").textContent =
+            "Next Question";
+
+    }
+
+}
+
+
+/* =========================================================
+   NEXT / FINISH BUTTON
+========================================================= */
+
+qs("#next").addEventListener("click", () => {
+
+    /* Check if answer selected */
+
+    if (selectedAnswer === -1) {
+
+        toast("Choose an answer first");
+
+        return;
+
+    }
+
+
+    const topicData =
+        interviewTopics[currentTopic];
+
+    const question =
+        topicData.questions[currentQuestion];
+
+
+    /* Check answer */
+
+    if (selectedAnswer === question[2]) {
+
+        currentScore++;
+
+    }
+
+
+    /* Update score */
+
+    qs("#coachScore").textContent =
+        currentScore;
+
+
+    /* Check if this was the last question */
+
+    if (
+        currentQuestion ===
+        topicData.questions.length - 1
+    ) {
+
+        const total =
+            topicData.questions.length;
+
+
+        qs("#iscore").textContent =
+            `Score: ${currentScore}/${total}`;
+
+
+        /* Show result */
+
+        modal(
+            "Interview Complete",
+            `
+                <div class="interview-result">
+
+                    <h2>
+                        ${currentTopic}
+                    </h2>
+
+                    <p>
+                        You completed all
+                        ${total} questions.
+                    </p>
+
+                    <h2>
+                        Your Score:
+                        ${currentScore}/${total}
+                    </h2>
+
+                    <p>
+                        ${
+                            currentScore >= total * 0.8
+                                ? "Excellent performance! 🎉"
+                                : currentScore >= total * 0.5
+                                    ? "Good job! Keep practicing. 👍"
+                                    : "Keep practicing and improve your score. 💪"
+                        }
+                    </p>
+
+                </div>
+            `
+        );
+
+
+        return;
+
+    }
+
+
+    /* Move to next question */
+
+    currentQuestion++;
+
+    loadQuestion();
+
+});
+
+
+/* =========================================================
+   BACK TO TOPICS
+========================================================= */
+
+qs("#backToTopics").addEventListener("click", () => {
+
+    qs("#practiceSection").hidden =
+        true;
+
+    qs("#topicSection").hidden =
+        false;
+
+
+    /* Reset interview */
+
+    currentTopic = "";
+    currentQuestion = 0;
+    currentScore = 0;
+    selectedAnswer = -1;
+
+});
+
+
+/* =========================================================
+   KEYBOARD ACCESS FOR TOPIC CARDS
+========================================================= */
+
+qsa(".topic-card").forEach(card => {
+
+    card.addEventListener("keydown", event => {
+
+        if (
+            event.key === "Enter" ||
+            event.key === " "
+        ) {
+
+            event.preventDefault();
+
+            const topic =
+                card.dataset.topic;
+
+            startInterview(topic);
+
+        }
+
+    });
+
+});
+
+
+/* =========================================================
+   INITIAL STATE
+========================================================= */
+
+qs("#topicSection").hidden =
+    false;
+
+qs("#practiceSection").hidden =
+    true;
+
+</script>
+
+</body>
+</html>
